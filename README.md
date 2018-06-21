@@ -25,6 +25,7 @@ This diagram shows how the derivative response affects the controlled variable a
 
 ![Image Cannot be displayed](README_MEDIA/PID.png "Dervative Response Effect")
 
+Using the manual tuning(Trial & Error), I've started with all the gains Kp= Ki = Kd = 0, then I started to add a proportional gain = 1, and carefully observed the steering behaviour until the vehicle left the drivable lane (It drove for like 2~3 seconds inside the lane before the steers got aggresive due to the overshooting). After that I started adding a dervative gain Kd = 1 to damp these overshoots and observed the behaviour again, the dervative response slowed the proportional response causing the overshoots to be less aggressive but the vehicle still leaving the lane at certain point(After ~ 5 seconds), after that I kept decreasing the proportional gain and increasing the drevative one until I reached the optimal gains mentioned below where the car didn't leave the lane for the whole lap and the steers are smoother (Not sharp/aggressive) as possible.
 
 For our particular case here, this reflected in noticeablly damping the sharp steers, also since the simulator doesn't simulate the sensor noise, I had no problem to increase the Kd to damp the sharp steers as possible (Started by Kd = 1 and ended up with Kd = 3) as shown in the following clip (Final Tuned Params: Kp= 0.125, Ki = 0, Kd = 3 (Tuning Method: Manually "Trial & Error")):
 
